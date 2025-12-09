@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Metsimantsi | Pure Taste, Bold Identity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066CC;
+            --dark-blue: #003366;
+            --light-blue: #4A90E2;
+            --white: #FFFFFF;
+            --light-bg: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 51, 102, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white) !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--white) !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .about-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,102,204,0.8)),
+                        url('./assets/hero.png') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 76px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .about-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+            opacity: 0.95;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Main Content */
+        .content-section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--light-blue), var(--primary-blue));
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* About Cards */
+        .about-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            text-align: center;
+            border-top: 5px solid var(--primary-blue);
+            margin-bottom: 30px;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,102,204,0.15);
+        }
+        
+        .about-card i {
+            font-size: 3.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0,102,204,0.1) 0%, rgba(0,51,102,0.1) 100%);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+        }
+        
+        .about-card h3 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .about-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+        
+        /* Company Info */
+        .company-info {
+            background: linear-gradient(135deg, rgba(0,51,102,0.05) 0%, rgba(0,102,204,0.05) 100%);
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 50px;
+        }
+        
+        .info-item {
+            margin-bottom: 25px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            margin-right: 20px;
+            margin-top: 5px;
+            min-width: 30px;
+        }
+        
+        .info-item h4 {
+            color: var(--dark-blue);
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .info-item p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background: linear-gradient(to bottom, var(--light-blue), var(--primary-blue));
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+            border-radius: 3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 30px;
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .timeline-content h4 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .timeline-content p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 25px;
+            height: 25px;
+            background: var(--primary-blue);
+            border: 4px solid var(--white);
+            border-radius: 50%;
+            top: 15px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -13px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+        
+        /* Values Grid */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .value-item {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.3s ease;
+            border-left: 5px solid var(--primary-blue);
+        }
+        
+        .value-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,102,204,0.15);
+        }
+        
+        .value-item i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 25px;
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(0,102,204,0.1) 0%, rgba(0,51,102,0.1) 100%);
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            border-radius: 50%;
+        }
+        
+        .value-item h4 {
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .value-item p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .btn-custom {
+            background: var(--white);
+            color: var(--dark-blue);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-custom:hover {
+            background: var(--light-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: var(--dark-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 18px;
+            }
+            
+            .company-info {
+                padding: 40px 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .about-hero {
+                background-attachment: scroll !important;
+                height: 60vh;
+                margin-top: 70px;
+            }
+            
+            .about-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .about-card,
+            .company-info {
+                padding: 30px 25px;
+            }
+            
+            .cta-section {
+                padding: 80px 0;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .about-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .about-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .about-card i {
+                font-size: 2.5rem;
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+            }
+            
+            .value-item i {
+                font-size: 2.5rem;
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">METSIMANTSI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>ABOUT METSIMANTSI</h1>
+                <p>"Pure Taste, Bold Identity" - Empowering Communities Through Quality Beverages</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>Boipelo Jwa Rona, trading as Metsimantsi, is a dynamic women-driven business making waves in the Northern Cape</p>
+            </div>
+            
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="company-info">
+                        <div class="info-item">
+                            <i class="fas fa-building"></i>
+                            <div>
+                                <h4>Company Name</h4>
+                                <p>Boipelo Jwa Rona (Pty) Ltd, trading as Metsimantsi</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>House No 6924, 33rd Avenue, Rooisand, Kathu, 8446</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Established</h4>
+                                <p>06 September 2024</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Employees</h4>
+                                <p>5 dedicated professionals</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>BBBEE Status</h4>
+                                <p>Level 1 Contributor with 135% Procurement Recognition</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-card">
+                        <i class="fas fa-water"></i>
+                        <h3>Who We Are</h3>
+                        <p>Metsimantsi is a pioneering beverage company based in Kathu & Kuruman, specializing in the purification and sale of bottled water, ice cubes, and fresh fruit juices. As a women-driven enterprise, we combine innovation with tradition to deliver exceptional products that meet the highest standards of quality and hygiene.</p>
+                        <p class="mb-0">Our commitment extends beyond business - we're dedicated to community upliftment, job creation, and empowering youth through practical skills and employment opportunities.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Our Journey -->
+            <div class="section-title mt-5">
+                <h2>Our Journey</h2>
+                <p>From vision to reality - The Metsimantsi story</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>The Vision</h4>
+                        <p>Prudence Boipelo Mahlangu identified the need for quality, locally-produced beverages in the Northern Cape region. The vision was clear: provide clean hydration while creating jobs.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Company Formation</h4>
+                        <p>Boipelo Jwa Rona (Pty) Ltd was officially registered on 06 September 2024, marking the beginning of our formal business operations.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>First Production</h4>
+                        <p>Our first batch of purified bottled water was produced and distributed, receiving positive feedback from the local community.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Product Expansion</h4>
+                        <p>We expanded our offerings to include ice cube production, fresh fruit juices, and custom label printing services.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>BBBEE Certification</h4>
+                        <p>Achieved Level 1 BBBEE Contributor status, enhancing our procurement recognition to 135%.</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h4>Growing Impact</h4>
+                        <p>Today, Metsimantsi serves both individual and business clients across Kathu and Kuruman, promoting healthy living and local economic development.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Vision -->
+    <section class="content-section" style="background: linear-gradient(135deg, rgba(0,51,102,0.05) 0%, rgba(0,102,204,0.05) 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Purpose</h2>
+                <p>Guided by a clear mission and an inspiring vision</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <p>To provide clean, refreshing, and safe beverages while delivering innovative labeling solutions that promote quality, health, and local business branding. We strive to exceed customer expectations with every bottle we produce.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="about-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <p>To become the leading regional provider of purified water and custom-labeled beverage solutions in the Northern Cape, recognized for our unwavering commitment to quality, affordability, and community empowerment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide every decision we make</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-item">
+                    <i class="fas fa-award"></i>
+                    <h4>Quality First</h4>
+                    <p>We prioritize hygiene, safety, and excellence in every product we offer, ensuring that each bottle meets our stringent quality standards.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Innovation</h4>
+                    <p>We combine creativity with technology to enhance our services, from water purification methods to custom label designs.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-hands-helping"></i>
+                    <h4>Community Upliftment</h4>
+                    <p>We believe in building local economies through job creation, skills development, and supporting community initiatives.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-smile"></i>
+                    <h4>Customer Satisfaction</h4>
+                    <p>We go the extra mile to meet our clients' needs, building lasting relationships based on trust and exceptional service.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-handshake"></i>
+                    <h4>Integrity</h4>
+                    <p>Honesty and transparency form the foundation of our business, guiding our interactions with customers, suppliers, and employees.</p>
+                </div>
+                <div class="value-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Safety & Hygiene</h4>
+                    <p>We maintain the highest standards of safety and cleanliness across all operations, from production to delivery.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Impact -->
+    <section class="content-section" style="background: linear-gradient(135deg, rgba(0,51,102,0.08) 0%, rgba(0,102,204,0.08) 100%);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Impact</h2>
+                <p>Making a difference in our community</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Job Creation</h3>
+                        <p>Creating sustainable employment opportunities for local community members, with a focus on youth empowerment and skills development.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="fas fa-heart"></i>
+                        <h3>Health Promotion</h3>
+                        <p>Providing access to clean, safe drinking water and nutritious fruit juices to promote healthier lifestyles in our community.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainability</h3>
+                        <p>Implementing environmentally responsible practices in our production processes and packaging solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Join Us on Our Journey</h2>
+            <p>Whether you're looking for quality beverages for your business or home, custom labeling solutions, or partnership opportunities, we'd love to connect with you.</p>
+            <div class="d-flex flex-wrap justify-content-center gap-3">
+                <a href="index.html#products" class="btn-custom">View Our Products</a>
+                <a href="index.html#contact" class="btn-custom" style="background: transparent; border: 2px solid var(--white);">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <div class="footer-logo">METSIMANTSI</div>
+                    <p>"Pure Taste, Bold Identity"</p>
+                    <p>Boipelo Jwa Rona (Pty) Ltd | Registration: 2024 / 557384 / 07</p>
+                    <p class="mb-0">BBBEE Level 1 Contributor: 135% Procurement Recognition</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-links mb-3">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="index.html#products">Products</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                    <p>&copy; 2024 Metsimantsi. All rights reserved.</p>
+                    <p class="mb-0">Empowering communities through quality beverages</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                if (targetId.includes('index.html')) {
+                    window.location.href = targetId;
+                    return;
+                }
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.about-card, .value-item, .timeline-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>

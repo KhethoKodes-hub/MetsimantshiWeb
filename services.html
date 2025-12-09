@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Metsimantsi | Pure Taste, Bold Identity</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-blue: #0066CC;
+            --dark-blue: #003366;
+            --light-blue: #4A90E2;
+            --accent-green: #00CC88;
+            --white: #FFFFFF;
+            --light-bg: #f8f9fa;
+            --text-dark: #333333;
+            --text-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navbar */
+        .navbar {
+            background: rgba(0, 51, 102, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--white) !important;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            margin: 0 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--white) !important;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .services-hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,51,102,0.85), rgba(0,102,204,0.8)),
+                        url('https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            margin-top: 76px;
+        }
+        
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            z-index: 10;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .services-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            animation: fadeInUp 1s ease;
+        }
+        
+        .services-hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1.2s ease;
+            opacity: 0.95;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Main Content */
+        .content-section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--light-blue), var(--primary-blue));
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Service Cards */
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            height: 100%;
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 30px 70px rgba(0,102,204,0.2);
+        }
+        
+        .service-header {
+            height: 200px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-header img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-header img {
+            transform: scale(1.1);
+        }
+        
+        .service-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .service-content {
+            padding: 40px;
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--white);
+            font-size: 2.5rem;
+        }
+        
+        .service-content h3 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+        
+        .service-features {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            padding: 8px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-light);
+        }
+        
+        .service-features li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-green);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .service-pricing {
+            background: linear-gradient(135deg, rgba(0,102,204,0.05) 0%, rgba(0,51,102,0.05) 100%);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        
+        .service-pricing h5 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .service-pricing p {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 1.2rem;
+            margin: 0;
+        }
+        
+        /* Process Section */
+        .process-section {
+            background: linear-gradient(135deg, rgba(0,51,102,0.05) 0%, rgba(0,102,204,0.05) 100%);
+        }
+        
+        .process-step {
+            text-align: center;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .process-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--light-blue) 0%, var(--primary-blue) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin: 0 auto 25px;
+        }
+        
+        .process-step h4 {
+            color: var(--dark-blue);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .process-step p {
+            color: var(--text-light);
+        }
+        
+        /* Safety & Hygiene */
+        .safety-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            margin-top: 30px;
+            border-left: 5px solid var(--accent-green);
+        }
+        
+        .safety-card h3 {
+            color: var(--dark-blue);
+            margin-bottom: 30px;
+            font-size: 2rem;
+            text-align: center;
+        }
+        
+        .safety-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .safety-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(0,204,136,0.1) 0%, rgba(0,102,204,0.1) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 25px;
+            color: var(--accent-green);
+            font-size: 1.8rem;
+            flex-shrink: 0;
+        }
+        
+        .safety-content h4 {
+            color: var(--dark-blue);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .safety-content p {
+            color: var(--text-light);
+            margin: 0;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--primary-blue) 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1564671165093-20688ff1fffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            opacity: 0.1;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0.9;
+        }
+        
+        .btn-custom {
+            background: var(--white);
+            color: var(--dark-blue);
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-custom:hover {
+            background: var(--light-bg);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            color: var(--dark-blue);
+        }
+        
+        .btn-outline-custom {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--white);
+            color: var(--dark-blue);
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 40px 0 20px;
+        }
+        
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--white);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .services-hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.5rem;
+            }
+            
+            .service-content {
+                padding: 30px;
+            }
+            
+            .safety-card {
+                padding: 40px 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .services-hero {
+                background-attachment: scroll !important;
+                height: 60vh;
+                margin-top: 70px;
+            }
+            
+            .services-hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .services-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .content-section {
+                padding: 80px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .service-header {
+                height: 150px;
+            }
+            
+            .cta-section {
+                padding: 80px 0;
+            }
+            
+            .cta-section h2 {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .services-hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .services-hero p {
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-content {
+                padding: 25px;
+            }
+            
+            .service-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+            
+            .safety-card {
+                padding: 30px 20px;
+            }
+            
+            .safety-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .safety-icon {
+                margin: 0 auto 15px;
+            }
+            
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+            
+            .navbar-brand {
+                font-size: 1.5rem;
+            }
+            
+            .btn-custom, .btn-outline-custom {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">METSIMANTSI</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>OUR SERVICES</h1>
+                <p>Premium beverage solutions and custom branding services for every need</p>
+                <a href="#services" class="btn-custom">Explore Our Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="content-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Offer</h2>
+                <p>Comprehensive beverage and branding solutions designed to meet your specific requirements</p>
+            </div>
+            
+            <!-- Purified Bottled Water -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Purified Bottled Water">
+                            <div class="service-badge">BEST SELLER</div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                            <h3>Purified Bottled Water</h3>
+                            <p>Experience the purity of nature in every bottle. Our advanced purification process ensures that you get clean, safe, and refreshing water for daily consumption, events, or resale.</p>
+                            
+                            <ul class="service-features">
+                                <li>Advanced multi-stage purification process</li>
+                                <li>Available in 330ml, 500ml, 1L, and 5L bottles</li>
+                                <li>Bulk orders for events and businesses</li>
+                                <li>Regular delivery schedules available</li>
+                                <li>Custom labeling for corporate clients</li>
+                            </ul>
+                            
+                            <div class="service-pricing">
+                                <h5>Starting from</h5>
+                                <p>R 8.00 per 500ml bottle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Why Choose Our Water?</h3>
+                            <p>Our purification process combines modern technology with rigorous quality control to deliver water that meets the highest standards of safety and taste.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-filter text-primary me-3 mt-1"></i>
+                                        <div>
+                                            <h6>5-Stage Filtration</h6>
+                                            <p class="small">Removes 99.9% of impurities</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-shield-alt text-primary me-3 mt-1"></i>
+                                        <div>
+                                            <h6>Quality Guaranteed</h6>
+                                            <p class="small">Regular testing and certification</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-truck text-primary me-3 mt-1"></i>
+                                        <div>
+                                            <h6>Flexible Delivery</h6>
+                                            <p class="small">On-time delivery to your location</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <div class="d-flex align-items-start">
+                                        <i class="fas fa-recycle text-primary me-3 mt-1"></i>
+                                        <div>
+                                            <h6>Eco-Friendly</h6>
+                                            <p class="small">Recyclable packaging materials</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="index.html#contact" class="btn-custom w-100 text-center">Order Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ice Cube Production -->
+            <div class="row align-items-center mb-5 flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <img src="assets/ice.png" alt="Ice Cube Production">
+                            <div class="service-badge">PERFECT FOR EVENTS</div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h3>Ice Cube Production & Sales</h3>
+                            <p>Crystal clear, pure ice cubes made from purified water. Perfect for restaurants, bars, events, and household use.</p>
+                            
+                            <ul class="service-features">
+                                <li>Made from purified water for crystal clarity</li>
+                                <li>Available in 5kg, 10kg, and 20kg bags</li>
+                                <li>Special shapes for events (hearts, stars, etc.)</li>
+                                <li>Regular delivery for commercial clients</li>
+                                <li>Emergency ice supply available</li>
+                            </ul>
+                            
+                            <div class="service-pricing">
+                                <h5>Starting from</h5>
+                                <p>R 25.00 per 5kg bag</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Ice Solutions for Every Need</h3>
+                            <p>Whether you're hosting a party, running a restaurant, or need emergency ice supply, we have the perfect solution.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-4 mb-3 text-center">
+                                    <div class="mb-2">
+                                        <i class="fas fa-glass-cheers fa-2x text-primary"></i>
+                                    </div>
+                                    <h6>Events</h6>
+                                    <p class="small">Weddings, parties, functions</p>
+                                </div>
+                                <div class="col-md-4 mb-3 text-center">
+                                    <div class="mb-2">
+                                        <i class="fas fa-utensils fa-2x text-primary"></i>
+                                    </div>
+                                    <h6>Restaurants</h6>
+                                    <p class="small">Regular supply for businesses</p>
+                                </div>
+                                <div class="col-md-4 mb-3 text-center">
+                                    <div class="mb-2">
+                                        <i class="fas fa-home fa-2x text-primary"></i>
+                                    </div>
+                                    <h6>Household</h6>
+                                    <p class="small">Daily use for families</p>
+                                </div>
+                            </div>
+                            
+                            <div class="alert alert-primary mt-4">
+                                <i class="fas fa-info-circle me-2"></i>
+                                <strong>Pro Tip:</strong> Order at least 24 hours in advance for large events to ensure availability.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Fresh Juice Production -->
+            <div class="row align-items-center mb-5">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Fresh Juice Production">
+                            <div class="service-badge">HEALTHY CHOICE</div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-glass-whiskey"></i>
+                            </div>
+                            <h3>Fresh Juice Production & Sales</h3>
+                            <p>100% natural fruit juices with no artificial preservatives. Freshly made daily to ensure maximum flavor and nutrition.</p>
+                            
+                            <ul class="service-features">
+                                <li>Made from fresh, locally sourced fruits</li>
+                                <li>No added sugars or preservatives</li>
+                                <li>Available in 250ml, 500ml, and 1L bottles</li>
+                                <li>Custom blends available</li>
+                                <li>Seasonal specials</li>
+                            </ul>
+                            
+                            <div class="service-pricing">
+                                <h5>Starting from</h5>
+                                <p>R 15.00 per 250ml bottle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Our Juice Varieties</h3>
+                            <p>Choose from our delicious range of fruit juices, each bursting with natural flavor and goodness.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-6 col-md-4 mb-3">
+                                    <div class="text-center p-3 border rounded">
+                                        <div class="mb-2">
+                                            <i class="fas fa-apple-alt text-success"></i>
+                                        </div>
+                                        <h6>Apple</h6>
+                                        <p class="small mb-0">Crisp and refreshing</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 mb-3">
+                                    <div class="text-center p-3 border rounded">
+                                        <div class="mb-2">
+                                            <i class="fas fa-lemon text-warning"></i>
+                                        </div>
+                                        <h6>Orange</h6>
+                                        <p class="small mb-0">Vitamin C rich</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 mb-3">
+                                    <div class="text-center p-3 border rounded">
+                                        <div class="mb-2">
+                                            <i class="fas fa-grape text-purple"></i>
+                                        </div>
+                                        <h6>Grape</h6>
+                                        <p class="small mb-0">Antioxidant packed</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 mb-3">
+                                    <div class="text-center p-3 border rounded">
+                                        <div class="mb-2">
+                                            <i class="fas fa-pineapple text-warning"></i>
+                                        </div>
+                                        <h6>Pineapple</h6>
+                                        <p class="small mb-0">Tropical delight</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 mb-3">
+                                    <div class="text-center p-3 border rounded">
+                                        <div class="mb-2">
+                                            <i class="fas fa-carrot text-danger"></i>
+                                        </div>
+                                        <h6>Carrot</h6>
+                                        <p class="small mb-0">Vitamin A rich</p>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-4 mb-3">
+                                    <div class="text-center p-3 border rounded">
+                                        <div class="mb-2">
+                                            <i class="fas fa-blender text-success"></i>
+                                        </div>
+                                        <h6>Custom Blend</h6>
+                                        <p class="small mb-0">Your special mix</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Custom Label Printing -->
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <div class="service-card">
+                        <div class="service-header">
+                            <img src="assets/print2.png" alt="Custom Label Printing">
+                            <div class="service-badge">BRANDING SERVICE</div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            <h3>Custom Label & Sticker Printing</h3>
+                            <p>Make your beverages stand out with professional custom labels. Perfect for businesses, events, or personal use.</p>
+                            
+                            <ul class="service-features">
+                                <li>High-quality waterproof labels</li>
+                                <li>Design consultation available</li>
+                                <li>Quick turnaround time</li>
+                                <li>Bulk discounts available</li>
+                                <li>Multiple shape and size options</li>
+                            </ul>
+                            
+                            <div class="service-pricing">
+                                <h5>Starting from</h5>
+                                <p>R 2.50 per label (minimum 100 labels)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-card">
+                        <div class="service-content">
+                            <h3>Label Printing Process</h3>
+                            <p>Our streamlined process ensures you get professional labels that perfectly represent your brand.</p>
+                            
+                            <div class="process-step mb-4">
+                                <div class="process-number">1</div>
+                                <h5>Consultation</h5>
+                                <p>We discuss your branding needs and requirements</p>
+                            </div>
+                            
+                            <div class="process-step mb-4">
+                                <div class="process-number">2</div>
+                                <h5>Design</h5>
+                                <p>Our team creates custom designs based on your input</p>
+                            </div>
+                            
+                            <div class="process-step mb-4">
+                                <div class="process-number">3</div>
+                                <h5>Approval</h5>
+                                <p>You review and approve the final design</p>
+                            </div>
+                            
+                            <div class="process-step">
+                                <div class="process-number">4</div>
+                                <h5>Print & Deliver</h5>
+                                <p>We print and deliver your custom labels</p>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <a href="index.html#contact" class="btn-outline-custom w-100 text-center">Request Quote</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Safety & Hygiene -->
+    <section class="content-section process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Safety & Hygiene Standards</h2>
+                <p>We maintain the highest standards to ensure your safety and satisfaction</p>
+            </div>
+            
+            <div class="safety-card">
+                <h3>Our Commitment to Quality</h3>
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="safety-item">
+                            <div class="safety-icon">
+                                <i class="fas fa-hand-sparkles"></i>
+                            </div>
+                            <div class="safety-content">
+                                <h4>Personal Hygiene</h4>
+                                <p>All staff undergo regular hygiene training and follow strict personal cleanliness protocols.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="safety-item">
+                            <div class="safety-icon">
+                                <i class="fas fa-industry"></i>
+                            </div>
+                            <div class="safety-content">
+                                <h4>Clean Production Areas</h4>
+                                <p>Daily disinfection of all workspaces and equipment to prevent contamination.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="safety-item">
+                            <div class="safety-icon">
+                                <i class="fas fa-filter"></i>
+                            </div>
+                            <div class="safety-content">
+                                <h4>Water Purification Compliance</h4>
+                                <p>Regular testing and maintenance of purification systems to ensure water quality.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-6">
+                        <div class="safety-item">
+                            <div class="safety-icon">
+                                <i class="fas fa-apple-alt"></i>
+                            </div>
+                            <div class="safety-content">
+                                <h4>Safe Ingredient Handling</h4>
+                                <p>All fruits and ingredients are handled using food-safe procedures in hygienic environments.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="safety-item">
+                            <div class="safety-icon">
+                                <i class="fas fa-clipboard-check"></i>
+                            </div>
+                            <div class="safety-content">
+                                <h4>Quality Checks</h4>
+                                <p>Every batch undergoes visual and manual inspection before delivery.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="safety-item">
+                            <div class="safety-icon">
+                                <i class="fas fa-sync-alt"></i>
+                            </div>
+                            <div class="safety-content">
+                                <h4>Continuous Improvement</h4>
+                                <p>Regular review and updating of safety practices based on regulations and feedback.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Order?</h2>
+                <p>Contact us today to discuss your beverage needs or request a custom quote for our services.</p>
+                <div class="d-flex flex-wrap justify-content-center gap-3">
+                    <a href="index.html#contact" class="btn-custom">Contact Us Now</a>
+                    <a href="tel:0790369956" class="btn-outline-custom">
+                        <i class="fas fa-phone me-2"></i>Call: 079 036 9956
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-4 mb-md-0">
+                    <div class="footer-logo">METSIMANTSI</div>
+                    <p>"Pure Taste, Bold Identity"</p>
+                    <p>Boipelo Jwa Rona (Pty) Ltd | Registration: 2024 / 557384 / 07</p>
+                    <p class="mb-0">BBBEE Level 1 Contributor: 135% Procurement Recognition</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <div class="footer-links mb-3">
+                        <a href="index.html">Home</a>
+                        <a href="about.html">About</a>
+                        <a href="services.html">Services</a>
+                        <a href="index.html#contact">Contact</a>
+                    </div>
+                    <p>&copy; 2024 Metsimantsi. All rights reserved.</p>
+                    <p class="mb-0">Empowering communities through quality beverages</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.15)';
+            } else {
+                navbar.style.padding = '1rem 0';
+                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                if (targetId.includes('index.html')) {
+                    window.location.href = targetId;
+                    return;
+                }
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const navbarToggler = document.querySelector('.navbar-toggler');
+                    const navbarCollapse = document.querySelector('.navbar-collapse');
+                    if (navbarCollapse.classList.contains('show')) {
+                        navbarToggler.click();
+                    }
+                }
+            });
+        });
+
+        // Service cards animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.service-card, .process-step, .safety-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(el);
+        });
+
+        // Add color classes for icons
+        document.addEventListener('DOMContentLoaded', function() {
+            const textPurple = document.querySelector('.text-purple');
+            if (textPurple) {
+                textPurple.style.color = '#8A2BE2';
+            }
+        });
+    </script>
+</body>
+</html>
